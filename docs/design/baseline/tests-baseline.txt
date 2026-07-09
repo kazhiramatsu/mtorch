@@ -1,0 +1,480 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.14.2, pytest-9.0.2, pluggy-1.6.0
+rootdir: /Users/hiramatsu/dev/mtorch
+configfile: pyproject.toml
+collected 2272 items
+
+tests/compat/test_api_surface.py ....................................... [  1%]
+........................................................................ [  4%]
+........................................................................ [  8%]
+........................................................................ [ 11%]
+........................................................................ [ 14%]
+........................................................................ [ 17%]
+........................................................................ [ 20%]
+.................................                                        [ 22%]
+tests/compat/test_autograd.py .......................................... [ 24%]
+..............................................................           [ 26%]
+tests/compat/test_benchmarks.py ........................................ [ 28%]
+........................................................................ [ 31%]
+........................................................................ [ 34%]
+........................................................................ [ 38%]
+........................................................................ [ 41%]
+........................................................................ [ 44%]
+...............                                                          [ 45%]
+tests/compat/test_candidate_identity.py ..                               [ 45%]
+tests/compat/test_nn_modules.py ........................................ [ 46%]
+.................................................                        [ 49%]
+tests/compat/test_optim.py ....                                          [ 49%]
+tests/compat/test_serialization.py ..                                    [ 49%]
+tests/compat/test_tensor_ops.py ........................................ [ 51%]
+........................................................................ [ 54%]
+........................................................................ [ 57%]
+........................................................................ [ 60%]
+........................................................................ [ 63%]
+........................................................................ [ 66%]
+........................................................................ [ 70%]
+........................................................................ [ 73%]
+........................................................................ [ 76%]
+........................................................................ [ 79%]
+........................................................................ [ 82%]
+........................................................................ [ 85%]
+........................................................................ [ 89%]
+........................................................................ [ 92%]
+........................................................................ [ 95%]
+........................................................................ [ 98%]
+..........                                                               [ 99%]
+tests/compat/test_views.py ......................                        [100%]
+
+=============================== warnings summary ===============================
+tests/compat/test_benchmarks.py::test_benchmark_against_pytorch[bench.chain_matmul_32x32]
+  /opt/homebrew/lib/python3.14/site-packages/torch/functional.py:2025: UserWarning: torch.chain_matmul is deprecated and will be removed in a future PyTorch release. Use torch.linalg.multi_dot instead, which accepts a list of two or more tensors rather than multiple parameters. (Triggered internally at /Users/runner/work/pytorch/pytorch/pytorch/aten/src/ATen/native/LinearAlgebra.cpp:1114.)
+    return _VF.chain_matmul(matrices)  # type: ignore[attr-defined]
+
+tests/compat/test_tensor_ops.py::test_operator_matches_reference[nn.functional.upsample_nearest]
+  /Users/hiramatsu/dev/mtorch/tests/compat/harness.py:132: UserWarning: `nn.functional.upsample` is deprecated. Use `nn.functional.interpolate` instead.
+    return resolve_path(module, case.target)(*args, **kwargs)
+
+tests/compat/test_tensor_ops.py::test_tensor_transpose_properties_match_reference
+  /Users/hiramatsu/dev/mtorch/tests/compat/test_tensor_ops.py:5618: UserWarning: The use of `x.T` on tensors of dimension other than 2 to reverse their shape is deprecated and it will throw an error in a future release. Consider `x.mT` to transpose batches of matrices or `x.permute(*torch.arange(x.ndim - 1, -1, -1))` to reverse the dimensions of a tensor. (Triggered internally at /Users/runner/work/pytorch/pytorch/pytorch/aten/src/ATen/native/TensorShape.cpp:4483.)
+    assert_values_compatible(torch_reference, expected.T, actual.T, path="tensor.T")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+------------------------- PyTorch benchmark comparison -------------------------
+SLOW if ratio>1.00
+case                                   status   torch ms  mtorch ms    ratio  torch min mtorch min
+bench.binary_add_64x64                     OK      0.001      0.001     0.82      0.001      0.001
+bench.logical_and_64x64                    OK      0.001      0.000     0.47      0.001      0.000
+bench.logical_not_64x64                    OK      0.001      0.000     0.50      0.001      0.000
+bench.bitwise_and_bool_64x64               OK      0.001      0.000     0.47      0.001      0.000
+bench.bitwise_invert_bool_64x64            OK      0.001      0.000     0.46      0.001      0.000
+bench.isclose_64x64                        OK      0.013      0.003     0.26      0.013      0.003
+bench.allclose_64x64                       OK      0.015      0.002     0.15      0.015      0.002
+bench.remainder_64x64                      OK      0.005      0.001     0.15      0.005      0.001
+bench.fmod_64x64                           OK      0.004      0.002     0.41      0.004      0.002
+bench.floor_divide_64x64                   OK      0.007      0.001     0.11      0.007      0.001
+bench.atan2_64x64                          OK      0.008      0.005     0.63      0.008      0.005
+bench.hypot_64x64                          OK      0.006      0.004     0.71      0.006      0.004
+bench.ldexp_64x64                          OK      0.018      0.002     0.12      0.018      0.002
+bench.nextafter_64x64                      OK      0.003      0.002     0.79      0.003      0.002
+bench.float_power_64x64                    OK      0.039      0.025     0.65      0.037      0.025
+bench.copysign_64x64                       OK      0.001      0.001     0.63      0.001      0.001
+bench.heaviside_64x64                      OK      0.002      0.001     0.42      0.002      0.001
+bench.logaddexp_64x64                      OK      0.010      0.007     0.70      0.010      0.007
+bench.logaddexp2_64x64                     OK      0.009      0.007     0.77      0.009      0.007
+bench.xlogy_64x64                          OK      0.007      0.003     0.46      0.007      0.003
+bench.fmax_64x64                           OK      0.002      0.001     0.49      0.002      0.001
+bench.fmin_64x64                           OK      0.002      0.001     0.47      0.002      0.001
+bench.lerp_tensor_weight_64x64             OK      0.001      0.001     0.71      0.001      0.001
+bench.add_scalar_64x64                     OK      0.001      0.001     0.52      0.001      0.001
+bench.broadcast_add_64x64                  OK      0.001      0.001     0.85      0.001      0.001
+bench.broadcast_shapes                     OK      0.006      0.000     0.05      0.006      0.000
+bench.broadcast_tensors_64x64              OK      0.001      0.000     0.30      0.001      0.000
+bench.index_select_dim0_64x64              OK      0.001      0.000     0.44      0.001      0.000
+bench.take_64x64                           OK      0.001      0.001     0.64      0.001      0.001
+bench.gather_dim1_64x64                    OK      0.001      0.001     0.69      0.001      0.001
+bench.index_put_pair_64x64                 OK      0.002      0.001     0.63      0.002      0.001
+bench.take_along_dim_dim1_64x64            OK      0.004      0.001     0.24      0.004      0.001
+bench.isin_int64_64x64                     OK      0.035      0.007     0.19      0.035      0.007
+bench.scatter_dim1_64x64                   OK      0.002      0.001     0.71      0.002      0.001
+bench.scatter_add_dim1_64x64               OK      0.002      0.001     0.67      0.002      0.001
+bench.masked_select_64x64                  OK      0.004      0.001     0.26      0.004      0.001
+bench.masked_fill_64x64                    OK      0.002      0.001     0.40      0.002      0.001
+bench.nonzero_64x64                        OK      0.006      0.002     0.37      0.006      0.002
+bench.count_nonzero_64x64                  OK      0.001      0.001     0.46      0.001      0.001
+bench.method_mul_64x64                     OK      0.001      0.001     0.75      0.001      0.001
+bench.split_64x64_dim0_size16              OK      0.002      0.001     0.26      0.002      0.000
+bench.chunk_64x64_dim0_chunks8             OK      0.002      0.001     0.33      0.002      0.001
+bench.unbind_8x64_dim0                     OK      0.002      0.001     0.41      0.002      0.001
+bench.as_strided_64x64                     OK      0.001      0.000     0.54      0.001      0.000
+bench.diagonal_64x64                       OK      0.000      0.000     0.50      0.000      0.000
+bench.diag_64x64                           OK      0.001      0.000     0.44      0.001      0.000
+bench.diagflat_vector_128                  OK      0.002      0.001     0.67      0.002      0.001
+bench.tril_64x64                           OK      0.001      0.001     0.59      0.001      0.001
+bench.triu_64x64                           OK      0.001      0.001     0.57      0.001      0.001
+bench.ravel_transpose_64x64                OK      0.003      0.002     0.66      0.003      0.002
+bench.empty_strided_fill_64x64             OK      0.001      0.001     0.52      0.001      0.001
+bench.trace_64x64                          OK      0.000      0.000     0.55      0.000      0.000
+bench.movedim_8x16x8x8                     OK      0.001      0.000     0.47      0.001      0.000
+bench.swapaxes_8x16x8x8                    OK      0.001      0.000     0.46      0.000      0.000
+bench.maximum_64x64                        OK      0.001      0.001     0.89      0.001      0.001
+bench.relu_64x64                           OK      0.001      0.001     0.72      0.001      0.000
+bench.nn_functional_leaky_relu_64x64       OK      0.001      0.001     0.62      0.001      0.001
+bench.nn_functional_silu_64x64             OK      0.003      0.002     0.88      0.003      0.002
+bench.nn_functional_elu_64x64              OK      0.006      0.003     0.49      0.006      0.003
+bench.nn_functional_selu_64x64             OK      0.006      0.003     0.52      0.006      0.003
+bench.nn_functional_softplus_64x64         OK      0.009      0.005     0.56      0.009      0.005
+bench.nn_functional_hardtanh_64x64         OK      0.001      0.001     0.44      0.001      0.001
+bench.nn_functional_gelu_64x64             OK      0.003      0.001     0.44      0.003      0.001
+bench.nn_functional_relu6_64x64            OK      0.001      0.001     0.52      0.001      0.001
+bench.nn_functional_hardsigmoid_64x64      OK      0.001      0.001     0.67      0.001      0.001
+bench.nn_functional_hardswish_64x64        OK      0.001      0.001     0.65      0.001      0.001
+bench.nn_functional_softsign_64x64         OK      0.003      0.001     0.22      0.003      0.001
+bench.nn_functional_mish_64x64             OK      0.024      0.006     0.27      0.023      0.006
+bench.nn_functional_layer_norm_64x64       OK      0.003      0.002     0.81      0.003      0.002
+bench.nn_functional_layer_norm_half_2x77x64     OK      0.005      0.003     0.59      0.005      0.003
+bench.nn_functional_layer_norm_half_2x77x768     OK      0.032      0.024     0.75      0.032      0.024
+bench.sigmoid_half_2x77x768                OK      0.069      0.065     0.94      0.066      0.062
+bench.nn_functional_rms_norm_64x64         OK      0.005      0.001     0.19      0.005      0.001
+bench.nn_functional_batch_norm_eval_64x64     OK      0.003      0.001     0.42      0.003      0.001
+bench.nn_functional_batch_norm2d_eval_8x16x8x8     OK      0.003      0.001     0.49      0.003      0.001
+bench.nn_functional_group_norm_8x16x8x8     OK      0.004      0.002     0.53      0.004      0.002
+bench.nn_functional_normalize_64x64        OK      0.004      0.002     0.46      0.004      0.002
+bench.nn_functional_dropout_eval_64x64     OK      0.001      0.000     0.32      0.001      0.000
+bench.sin_64x64                            OK      0.004      0.002     0.44      0.003      0.002
+bench.cos_64x64                            OK      0.004      0.002     0.37      0.004      0.002
+bench.tan_64x64                            OK      0.006      0.002     0.31      0.006      0.002
+bench.sinh_64x64                           OK      0.007      0.002     0.26      0.007      0.002
+bench.cosh_64x64                           OK      0.007      0.002     0.25      0.007      0.002
+bench.tanh_64x64                           OK      0.008      0.002     0.30      0.008      0.002
+bench.sigmoid_64x64                        OK      0.003      0.002     0.84      0.003      0.002
+bench.deg2rad_64x64                        OK      0.001      0.001     0.45      0.001      0.001
+bench.rad2deg_64x64                        OK      0.001      0.001     0.47      0.001      0.001
+bench.frac_64x64                           OK      0.001      0.001     0.72      0.001      0.001
+bench.isfinite_64x64                       OK      0.004      0.001     0.31      0.004      0.001
+bench.signbit_64x64                        OK      0.001      0.001     0.51      0.001      0.001
+bench.nan_to_num_64x64                     OK      0.001      0.001     0.67      0.001      0.001
+bench.square_64x64                         OK      0.001      0.001     0.89      0.001      0.001
+bench.floor_64x64                          OK      0.001      0.001     0.78      0.001      0.001
+bench.log1p_64x64                          OK      0.006      0.003     0.55      0.006      0.003
+bench.expm1_64x64                          OK      0.007      0.002     0.32      0.007      0.002
+bench.log2_64x64                           OK      0.006      0.003     0.39      0.006      0.002
+bench.log10_64x64                          OK      0.006      0.003     0.41      0.006      0.003
+bench.rsqrt_64x64                          OK      0.002      0.002     0.63      0.002      0.001
+bench.asin_64x64                           OK      0.006      0.003     0.60      0.005      0.003
+bench.erf_64x64                            OK      0.002      0.002     0.78      0.002      0.002
+bench.reciprocal_64x64                     OK      0.002      0.001     0.55      0.002      0.001
+bench.clamp_64x64                          OK      0.001      0.001     0.72      0.001      0.001
+bench.clamp_min_64x64                      OK      0.001      0.001     0.65      0.001      0.001
+bench.clamp_max_64x64                      OK      0.001      0.001     0.70      0.001      0.001
+bench.clone_float32_64x64                  OK      0.001      0.001     0.63      0.001      0.001
+bench.sum_128x128                          OK      0.001      0.001     0.71      0.001      0.001
+bench.sum_dim1_128x128                     OK      0.001      0.001     0.63      0.001      0.001
+bench.mean_dim1_128x128                    OK      0.002      0.001     0.45      0.002      0.001
+bench.cumsum_dim1_128x128                  OK      0.007      0.004     0.50      0.007      0.003
+bench.cumprod_dim1_128x128                 OK      0.008      0.008     0.94      0.008      0.008
+bench.cummax_dim1_128x128                  OK      0.010      0.007     0.65      0.009      0.006
+bench.cummin_dim1_128x128                  OK      0.008      0.007     0.85      0.008      0.007
+bench.argmax_int64_clip_2x77               OK      0.001      0.000     0.35      0.001      0.000
+bench.diff_dim1_128x128                    OK      0.003      0.002     0.92      0.002      0.002
+bench.gradient_dim1_128x128                OK      0.011      0.004     0.31      0.011      0.003
+bench.gradient_edge2_1024                  OK      0.010      0.002     0.15      0.010      0.001
+bench.trapezoid_dim1_128x128               OK      0.004      0.001     0.19      0.004      0.001
+bench.cumulative_trapezoid_dim1_128x128     OK      0.011      0.008     0.75      0.011      0.008
+bench.amax_dim1_256x256                    OK      0.003      0.002     0.78      0.003      0.002
+bench.prod_128x128                         OK      0.001      0.001     0.64      0.001      0.001
+bench.sort_dim1_64x64                      OK      0.005      0.003     0.51      0.005      0.002
+bench.argsort_dim1_64x64                   OK      0.005      0.002     0.50      0.005      0.002
+bench.topk_dim1_64x64                      OK      0.005      0.002     0.39      0.005      0.002
+bench.searchsorted_1024                    OK      0.005      0.003     0.66      0.005      0.003
+bench.logspace_1024                        OK      0.005      0.004     0.76      0.005      0.004
+bench.quantile_dim1_64x64                  OK      0.016      0.002     0.15      0.015      0.002
+bench.quantile_all_64x64                   OK      0.016      0.002     0.15      0.016      0.002
+bench.multinomial_one_hot_64x64            OK      0.009      0.002     0.27      0.008      0.002
+bench.bincount_int64_4096                  OK      0.003      0.002     0.81      0.003      0.002
+bench.bincount_weighted_float32_4096       OK      0.003      0.001     0.40      0.003      0.001
+bench.bernoulli_binary_64x64               OK      0.005      0.003     0.65      0.005      0.003
+bench.unique_int64_4096                    OK      0.025      0.011     0.43      0.024      0.011
+bench.unique_dim0_int64_128x2              OK      0.072      0.002     0.03      0.070      0.002
+bench.unique_dim1_int64_2x128              OK      0.076      0.002     0.03      0.071      0.002
+bench.unique_consecutive_int64_1024        OK      0.002      0.001     0.49      0.002      0.001
+bench.unique_consecutive_dim0_int64_128x2     OK      0.030      0.001     0.04      0.029      0.001
+bench.unique_consecutive_dim1_int64_2x128     OK      0.030      0.001     0.03      0.030      0.001
+bench.softmax_dim1_64x64                   OK      0.004      0.003     0.72      0.004      0.003
+bench.log_softmax_dim1_64x64               OK      0.003      0.002     0.72      0.003      0.002
+bench.norm_dim1_64x64                      OK      0.002      0.001     0.56      0.002      0.001
+bench.norm_p0_dim1_64x64                   OK      0.006      0.001     0.14      0.006      0.001
+bench.var_128x128                          OK      0.016      0.001     0.09      0.015      0.001
+bench.std_128x128                          OK      0.015      0.001     0.10      0.015      0.001
+bench.var_mean_dim1_128x128                OK      0.113      0.009     0.08      0.113      0.009
+bench.std_mean_dim1_128x128                OK      0.113      0.009     0.08      0.113      0.009
+bench.all_bool_128x128                     OK      0.008      0.001     0.10      0.008      0.001
+bench.matmul_48x48                         OK      0.002      0.001     0.83      0.002      0.001
+bench.matmul_operator_48x48                OK      0.002      0.001     0.78      0.002      0.001
+bench.matmul_batched_8x32x32               OK      0.009      0.003     0.38      0.008      0.003
+bench.matmul_broadcast_8x32x32             OK      0.012      0.003     0.27      0.012      0.003
+bench.dot_1024                             OK      0.001      0.000     0.50      0.000      0.000
+bench.vdot_1024                            OK      0.001      0.000     0.50      0.000      0.000
+bench.inner_64x64                          OK      0.004      0.002     0.52      0.003      0.002
+bench.tensordot_64x64                      OK      0.005      0.002     0.53      0.004      0.002
+bench.einsum_matmul_48x48                  OK      0.007      0.002     0.21      0.007      0.002
+bench.einsum_batched_matmul_8x32x32        OK      0.016      0.004     0.22      0.016      0.004
+bench.mv_64x64                             OK      0.001      0.001     0.78      0.001      0.001
+bench.outer_64x64                          OK      0.001      0.001     0.56      0.001      0.001
+bench.addmm_64x64                          OK      0.003      0.002     0.79      0.002      0.002
+bench.addmv_64x64                          OK      0.002      0.001     0.68      0.001      0.001
+bench.addr_64x64                           OK      0.001      0.001     0.75      0.001      0.001
+bench.addcmul_64x64                        OK      0.001      0.001     0.67      0.001      0.001
+bench.addcdiv_64x64                        OK      0.001      0.001     0.64      0.001      0.001
+bench.bmm_8x32x32                          OK      0.010      0.003     0.30      0.010      0.003
+bench.baddbmm_8x32x32                      OK      0.011      0.004     0.38      0.011      0.004
+bench.addbmm_8x32x32                       OK      0.011      0.003     0.29      0.010      0.003
+bench.chain_matmul_32x32                   OK      0.004      0.003     0.65      0.004      0.002
+bench.linalg_multi_dot_32x32               OK      0.003      0.003     0.78      0.003      0.002
+bench.matrix_power_32x32                   OK      0.002      0.001     0.81      0.002      0.001
+bench.kron_16x16                           OK      0.007      0.006     0.88      0.007      0.004
+bench.diag_embed_64x64                     OK      0.015      0.008     0.56      0.013      0.007
+bench.block_diag_32x32                     OK      0.002      0.001     0.30      0.002      0.001
+bench.nn_functional_linear_64x64           OK      0.003      0.003     0.77      0.003      0.002
+bench.nn_functional_linear_8x32x64         OK      0.006      0.005     0.89      0.005      0.005
+bench.nn_functional_linear_half_2x77x64     OK      0.024      0.018     0.75      0.023      0.017
+bench.nn_functional_conv1d_1x4x32          OK      0.002      0.001     0.57      0.002      0.001
+bench.nn_functional_conv_transpose1d_1x4x32     OK      0.003      0.001     0.53      0.003      0.001
+bench.nn_functional_max_pool1d_1x4x32      OK      0.001      0.000     0.41      0.001      0.000
+bench.nn_functional_avg_pool1d_1x4x32      OK      0.001      0.000     0.32      0.001      0.000
+bench.nn_functional_adaptive_avg_pool1d_1x4x32     OK      0.001      0.000     0.37      0.001      0.000
+bench.nn_functional_conv2d_1x4x8x8         OK      0.005      0.003     0.59      0.005      0.003
+bench.nn_functional_conv2d_half_1x1_1x16x8x8     OK      0.006      0.001     0.23      0.006      0.001
+bench.nn_functional_conv2d_same_1x4x8x8     OK      0.006      0.005     0.91      0.005      0.005
+bench.nn_functional_conv3d_1x2x4x4x4       OK      0.006      0.005     0.78      0.006      0.005
+bench.nn_functional_conv3d_half_1x4x4x8x8     OK      0.035      0.025     0.69      0.035      0.024
+bench.nn_functional_conv_transpose2d_1x4x8x8     OK      0.005      0.003     0.62      0.004      0.003
+bench.nn_functional_conv_transpose3d_1x2x4x4x4     OK      0.006      0.003     0.56      0.006      0.003
+bench.nn_functional_max_pool2d_1x4x16x16     OK      0.002      0.000     0.20      0.002      0.000
+bench.nn_functional_avg_pool2d_1x4x16x16     OK      0.001      0.001     0.51      0.001      0.001
+bench.nn_functional_adaptive_avg_pool2d_1x4x16x16     OK      0.002      0.001     0.36      0.002      0.001
+bench.nn_functional_adaptive_avg_pool2d_8x8_1x4x16x16     OK      0.002      0.001     0.67      0.002      0.001
+bench.nn_functional_unfold_1x4x16x16       OK      0.007      0.004     0.62      0.007      0.004
+bench.nn_functional_fold_1x36x256          OK      0.006      0.004     0.68      0.006      0.004
+bench.nn_functional_pad_1x4x16x16          OK      0.002      0.002     0.78      0.002      0.002
+bench.nn_functional_pad_reflect_1x4x16x16     OK      0.001      0.001     0.68      0.001      0.001
+bench.nn_functional_one_hot_16x16          OK      0.003      0.001     0.39      0.003      0.001
+bench.nn_functional_pixel_shuffle_1x4x16x16     OK      0.001      0.001     0.50      0.001      0.001
+bench.nn_functional_pixel_unshuffle_1x4x16x16     OK      0.001      0.001     0.52      0.001      0.001
+bench.nn_functional_channel_shuffle_1x4x16x16     OK      0.001      0.000     0.53      0.001      0.000
+bench.nn_functional_cosine_similarity_64x64     OK      0.005      0.004     0.83      0.005      0.004
+bench.nn_functional_interpolate_nearest_1x4x16x16     OK      0.005      0.001     0.15      0.005      0.001
+bench.nn_functional_interpolate_nearest_exact_1x4x16x16     OK      0.006      0.001     0.13      0.006      0.001
+bench.nn_functional_interpolate_nearest_half_1x4x16x16     OK      0.006      0.001     0.11      0.006      0.001
+bench.nn_functional_interpolate_bilinear_1x4x16x16     OK      0.006      0.005     0.76      0.006      0.005
+bench.nn_functional_interpolate_bilinear_half_1x4x16x16     OK      0.009      0.007     0.79      0.009      0.007
+bench.nn_functional_interpolate_bicubic_1x4x16x16     OK      0.022      0.010     0.43      0.022      0.009
+bench.nn_functional_interpolate_bicubic_half_1x4x16x16     OK      0.023      0.011     0.47      0.022      0.011
+bench.nn_functional_interpolate_area_1x4x16x16     OK      0.003      0.001     0.36      0.003      0.001
+bench.nn_functional_grid_sample_bilinear_1x4x16x16     OK      0.002      0.001     0.29      0.002      0.001
+bench.nn_functional_affine_grid_1x4x16x16     OK      0.009      0.001     0.07      0.008      0.001
+bench.nn_functional_sdpa_1x2x16x16         OK      0.007      0.005     0.68      0.006      0.005
+bench.stable_diffusion_clip_causal_attention_1x2x77x64     OK      0.030      0.019     0.64      0.026      0.019
+bench.stable_diffusion_clip_causal_attention_half_1x2x77x64     OK      0.247      0.023     0.09      0.246      0.023
+bench.stable_diffusion_half_additive_masked_attention_1x2x64x64     OK      0.169      0.027     0.16      0.168      0.025
+bench.stable_diffusion_half_dtype_masked_attention_1x2x64x64     OK      0.173      0.027     0.16      0.167      0.026
+bench.stable_diffusion_half_bool_masked_attention_1x2x64x64     OK      0.173      0.020     0.12      0.170      0.020
+bench.stable_diffusion_half_rank3_cross_attention_16x64x77x40     OK      0.256      0.168     0.66      0.254      0.167
+bench.stable_diffusion_half_legacy_baddbmm_attention_16x64x77x40     OK      1.041      0.227     0.22      1.030      0.227
+bench.stable_diffusion_half_upcast_baddbmm_attention_16x64x77x40     OK      0.656      0.416     0.63      0.652      0.410
+bench.stable_diffusion_half_unet_cross_attention_2x64x77x320     OK      1.715      0.518     0.30      1.677      0.510
+bench.stable_diffusion_sdxl_unet_cross_attention_half_2x64x77x2048     OK      6.063      0.849     0.14      5.917      0.835
+bench.stable_diffusion_sdxl_ip_adapter_cross_attention_half_2x64x77x2048     OK      7.122      1.087     0.15      7.056      1.085
+bench.stable_diffusion_sd3_joint_transformer_block_half_2x64x77x320     OK      9.196      2.016     0.22      9.143      2.001
+bench.stable_diffusion_sd3_qk_norm_joint_attention_half_2x64x77x320     OK      7.283      1.209     0.17      7.154      1.196
+bench.stable_diffusion_sd3_rotary_joint_attention_half_2x64x77x320     OK      7.271      6.793     0.93      7.182      6.719
+bench.stable_diffusion_sd3_rectangular_rotary_joint_attention_half_2x96x77x320   SLOW     10.222     10.252     1.00     10.062      9.878
+bench.stable_diffusion_sd3_single_transformer_block_half_2x64x77x320     OK     12.269      2.901     0.24     12.074      2.867
+bench.stable_diffusion_sd3_time_text_conditioning_half_4x2048x1280   SLOW      0.667      0.674     1.01      0.664      0.651
+bench.stable_diffusion_sd3_unpatchify_projection_half_2x64x320     OK      0.094      0.068     0.72      0.090      0.068
+bench.stable_diffusion_sd3_large_unpatchify_projection_half_2x256x320     OK      0.350      0.200     0.57      0.348      0.197
+bench.stable_diffusion_sd3_rectangular_unpatchify_projection_half_2x96x320     OK      0.134      0.088     0.65      0.133      0.087
+bench.stable_diffusion_sd3_patch_embed_half_channels_last_2x16x32x32     OK      0.431      0.215     0.50      0.422      0.206
+bench.stable_diffusion_sd3_rectangular_patch_embed_half_channels_last_2x16x16x24     OK      0.193      0.088     0.45      0.185      0.086
+bench.stable_diffusion_sd3_mini_transformer_stack_half_2x16x16x16     OK     21.684      7.866     0.36     21.409      7.811
+bench.stable_diffusion_sd3_rectangular_transformer_stack_half_2x16x16x24     OK     29.476     10.828     0.37     29.402     10.732
+bench.stable_diffusion_sd3_pooled_transformer_stack_half_2x16x16x16     OK     22.401      8.875     0.40     22.301      8.793
+bench.stable_diffusion_sd3_large_controlnet_transformer_stack_half_2x16x32x32     OK     81.843     17.961     0.22     81.733     17.734
+bench.stable_diffusion_sd3_multi_controlnet_transformer_stack_half_2x16x32x32     OK    164.211     47.849     0.29    163.316     47.565
+bench.stable_diffusion_sd3_pooled_multi_controlnet_transformer_stack_half_2x16x32x32     OK    165.818     49.961     0.30    165.303     49.378
+bench.stable_diffusion_sd3_rectangular_pooled_multi_controlnet_transformer_stack_half_2x16x16x24     OK     60.762     40.133     0.66     60.703     40.108
+bench.stable_diffusion_sd3_rectangular_pooled_inpaint_controlnet_transformer_stack_half_2x16x16x24     OK     63.560     44.751     0.70     63.314     44.653
+bench.stable_diffusion_sd3_rectangular_pooled_multi_image_inpaint_controlnet_transformer_stack_half_2x16x16x24     OK     65.971     48.496     0.74     65.668     47.970
+bench.stable_diffusion_sd3_rectangular_pooled_triple_image_inpaint_controlnet_transformer_stack_half_2x16x16x24     OK     68.470     52.674     0.77     68.267     52.188
+bench.stable_diffusion_sd3_flowmatch_cfg_step_half_2x16x16x16     OK      0.047      0.025     0.53      0.046      0.024
+bench.stable_diffusion_sd3_pooled_controlnet_denoising_step_half_1x16x32x32     OK    165.525     50.092     0.30    165.398     49.872
+bench.stable_diffusion_sd3_rectangular_pooled_controlnet_denoising_loop_half_1x16x16x24_2step     OK    121.668     80.799     0.66    121.409     79.945
+bench.stable_diffusion_sd3_rectangular_pooled_controlnet_denoising_loop_half_1x16x16x24_4step     OK    243.570    162.189     0.67    243.122    160.298
+bench.stable_diffusion_sd3_rectangular_pooled_controlnet_img2img_denoising_loop_half_1x16x16x24_strength060_3step     OK    183.136    121.360     0.66    183.002    121.036
+bench.stable_diffusion_sd3_rectangular_pooled_controlnet_keep_decay_denoising_loop_half_1x16x16x24_4step     OK    244.713    162.508     0.66    244.566    160.211
+bench.stable_diffusion_sd3_rectangular_pooled_inpaint_controlnet_denoising_loop_half_1x16x16x24_4step     OK    255.558    178.689     0.70    255.354    177.495
+bench.stable_diffusion_sd3_rectangular_pooled_inpaint_controlnet_img2img_denoising_loop_half_1x16x16x24_strength060_3step     OK    191.438    133.527     0.70    190.988    133.147
+bench.stable_diffusion_sd3_rectangular_pooled_inpaint_controlnet_keep_decay_denoising_loop_half_1x16x16x24_4step     OK    256.047    177.828     0.69    255.897    177.313
+bench.stable_diffusion_sd3_rectangular_pooled_multi_image_inpaint_controlnet_denoising_loop_half_1x16x16x24_4step     OK    267.821    197.997     0.74    267.505    195.260
+bench.stable_diffusion_sd3_rectangular_pooled_multi_image_inpaint_controlnet_windowed_denoising_loop_half_1x16x16x24_4step     OK    268.105    197.429     0.74    267.622    196.617
+bench.stable_diffusion_sd3_rectangular_pooled_multi_image_inpaint_controlnet_zero_width_windowed_denoising_loop_half_1x16x16x24_4step     OK    268.215    196.553     0.73    267.776    195.830
+bench.stable_diffusion_sd3_rectangular_pooled_multi_image_inpaint_controlnet_disabled_windowed_denoising_loop_half_1x16x16x24_4step     OK    268.317    196.336     0.73    268.150    194.801
+bench.stable_diffusion_sd3_rectangular_pooled_triple_image_inpaint_controlnet_denoising_loop_half_1x16x16x24_4step     OK    277.895    214.220     0.77    277.600    213.657
+bench.stable_diffusion_sd3_rectangular_pooled_triple_image_inpaint_controlnet_windowed_denoising_loop_half_1x16x16x24_4step     OK    278.055    213.041     0.77    277.957    212.467
+bench.stable_diffusion_sd3_rectangular_pooled_triple_image_inpaint_controlnet_zero_width_windowed_denoising_loop_half_1x16x16x24_4step     OK    278.219    214.281     0.77    277.866    213.260
+bench.stable_diffusion_sd3_rectangular_pooled_triple_image_inpaint_controlnet_disabled_windowed_denoising_loop_half_1x16x16x24_4step     OK    278.333    212.073     0.76    278.065    211.271
+bench.stable_diffusion_sd3_rectangular_pooled_multi_image_inpaint_controlnet_img2img_denoising_loop_half_1x16x16x24_strength060_3step     OK    201.623    148.240     0.74    201.575    147.548
+bench.stable_diffusion_sd3_rectangular_pooled_multi_image_inpaint_controlnet_windowed_img2img_denoising_loop_half_1x16x16x24_strength060_3step     OK    202.214    149.818     0.74    202.147    148.405
+bench.stable_diffusion_sd3_rectangular_pooled_multi_image_inpaint_controlnet_zero_width_windowed_img2img_denoising_loop_half_1x16x16x24_strength060_3step     OK    201.755    149.278     0.74    201.588    148.225
+bench.stable_diffusion_sd3_rectangular_pooled_multi_image_inpaint_controlnet_disabled_windowed_img2img_denoising_loop_half_1x16x16x24_strength060_3step     OK    201.734    148.835     0.74    201.431    147.551
+bench.stable_diffusion_sd3_rectangular_pooled_triple_image_inpaint_controlnet_img2img_denoising_loop_half_1x16x16x24_strength060_3step     OK    209.165    161.533     0.77    208.910    161.227
+bench.stable_diffusion_sd3_rectangular_pooled_triple_image_inpaint_controlnet_windowed_img2img_denoising_loop_half_1x16x16x24_strength060_3step     OK    209.060    162.244     0.78    208.809    160.433
+bench.stable_diffusion_sd3_rectangular_pooled_triple_image_inpaint_controlnet_zero_width_windowed_img2img_denoising_loop_half_1x16x16x24_strength060_3step     OK    209.005    161.016     0.77    208.604    159.970
+bench.stable_diffusion_sd3_rectangular_pooled_triple_image_inpaint_controlnet_disabled_windowed_img2img_denoising_loop_half_1x16x16x24_strength060_3step     OK    209.118    160.751     0.77    208.928    158.881
+bench.stable_diffusion_half_unet_group_norm_1x320x16x16     OK      0.018      0.017     0.96      0.018      0.017
+bench.stable_diffusion_half_channels_last_group_norm_1x320x16x16     OK      0.133      0.047     0.35      0.132      0.047
+bench.stable_diffusion_half_channels_last_silu_1x320x16x16     OK      0.049      0.038     0.77      0.049      0.038
+bench.stable_diffusion_half_channels_last_timestep_add_silu_1x320x16x16     OK      0.052      0.041     0.78      0.049      0.041
+bench.stable_diffusion_half_channels_last_resnet_scale_shift_1x320x16x16     OK     14.116      1.199     0.08     14.085      1.195
+bench.stable_diffusion_half_channels_last_classifier_free_guidance_2x4x64x64     OK      0.012      0.010     0.85      0.011      0.010
+bench.stable_diffusion_half_channels_last_scheduler_scale_2x4x64x64     OK      0.005      0.003     0.61      0.005      0.003
+bench.stable_diffusion_half_channels_last_scheduler_add_noise_2x4x64x64     OK      0.011      0.008     0.73      0.011      0.007
+bench.stable_diffusion_half_channels_last_mask_blend_2x4x64x64     OK      0.032      0.021     0.67      0.032      0.020
+bench.stable_diffusion_half_channels_last_controlnet_merge     OK      0.095      0.059     0.62      0.094      0.059
+bench.stable_diffusion_half_channels_last_3d_timestep_add_silu_1x320x4x8x8     OK      0.052      0.041     0.79      0.052      0.041
+bench.stable_diffusion_half_channels_last_3d_classifier_free_guidance_2x4x4x32x32     OK      0.012      0.010     0.81      0.012      0.009
+bench.stable_diffusion_half_channels_last_3d_scheduler_scale_2x4x4x32x32     OK      0.005      0.003     0.62      0.005      0.003
+bench.stable_diffusion_half_channels_last_3d_scheduler_add_noise_2x4x4x32x32     OK      0.011      0.008     0.73      0.011      0.007
+bench.stable_diffusion_half_channels_last_3d_mask_blend_2x4x4x32x32     OK      0.032      0.021     0.67      0.031      0.020
+bench.stable_diffusion_half_channels_last_3d_video_upsample_1x320x4x8x8     OK      0.017      0.012     0.74      0.017      0.011
+bench.stable_diffusion_half_video_upsample_1x320x4x8x8     OK      0.424      0.042     0.10      0.413      0.042
+bench.stable_diffusion_half_channels_last_conv2d_1x4x16x16     OK      0.013      0.008     0.64      0.013      0.008
+bench.stable_diffusion_half_channels_last_projection_conv2d_1x320x16x16     OK      0.704      0.135     0.19      0.700      0.131
+bench.stable_diffusion_half_channels_last_wide_conv2d_1x320x16x16     OK      6.519      0.440     0.07      6.476      0.440
+bench.stable_diffusion_half_channels_last_lora_conv2d_1x320x16x16     OK      6.654      0.466     0.07      6.641      0.465
+bench.stable_diffusion_half_channels_last_repeated_wide_conv2d_1x320x16x16     OK     13.072      0.922     0.07     13.012      0.917
+bench.stable_diffusion_half_channels_last_downsample_conv2d_1x320x32x32     OK      6.491      0.462     0.07      6.467      0.461
+bench.stable_diffusion_half_channels_last_upsample_conv2d_1x320x16x16     OK     25.721      1.593     0.06     25.608      1.589
+bench.stable_diffusion_half_channels_last_skip_cat_conv2d_1x320x16x16     OK     13.648      0.851     0.06     13.614      0.842
+bench.stable_diffusion_half_attention_projection_2x4x77x16     OK      0.469      0.145     0.31      0.466      0.143
+bench.stable_diffusion_half_clip_text_encoder_2x77x64     OK      0.481      0.163     0.34      0.473      0.160
+bench.stable_diffusion_half_clip_layer_norm_2x77x768     OK      0.034      0.025     0.73      0.034      0.025
+bench.stable_diffusion_half_clip_quick_gelu_2x77x768     OK      0.083      0.078     0.94      0.083      0.077
+bench.stable_diffusion_half_clip_mlp_2x77x768     OK     19.085      2.153     0.11     19.065      2.127
+bench.stable_diffusion_half_clip_attention_projection_2x77x768     OK     13.025      1.377     0.11     12.961      1.364
+bench.stable_diffusion_half_lora_attention_projection_2x77x768     OK     13.796      1.563     0.11     13.784      1.551
+bench.stable_diffusion_half_clip_transformer_block_2x77x768     OK     32.236      3.717     0.12     32.200      3.690
+bench.stable_diffusion_half_clip_large_text_encoder_stack_2x77x768     OK     64.343      7.427     0.12     64.275      7.365
+bench.stable_diffusion_clip_pooled_projection_half_2x77x64     OK      0.005      0.002     0.44      0.005      0.002
+bench.stable_diffusion_sdxl_dual_prompt_encode_half_2x77x2048     OK      0.485      0.312     0.64      0.473      0.311
+bench.stable_diffusion_sdxl_text_encoder2_stack_half_2x77x1280     OK     87.304      7.661     0.09     86.932      7.636
+bench.stable_diffusion_sdxl_add_time_conditioning_half_8x2816x1280     OK      1.145      0.535     0.47      1.139      0.530
+bench.stable_diffusion_sdxl_prompt_conditioning_bundle_half_4x77x2048     OK      1.651      1.008     0.61      1.632      1.002
+bench.stable_diffusion_prompt_embedding_repeat_half_2x77x320     OK      0.007      0.003     0.39      0.007      0.003
+bench.stable_diffusion_timestep_embedding_mlp_half_2x320x1280     OK      0.114      0.041     0.36      0.112      0.041
+bench.stable_diffusion_masked_attention_index_put_1x2x16x16     OK      0.012      0.008     0.70      0.011      0.008
+bench.stable_diffusion_bool_masked_attention_index_put_1x2x16x16     OK      0.013      0.009     0.67      0.012      0.008
+bench.stable_diffusion_dynamic_thresholding_quantile_2x4x8x8     OK      0.018      0.004     0.20      0.017      0.003
+bench.stable_diffusion_dynamic_thresholding_quantile_2x4x64x64     OK      0.198      0.044     0.22      0.193      0.043
+bench.stable_diffusion_guidance_rescale_std_mean_2x4x8x8     OK      0.015      0.005     0.34      0.015      0.005
+bench.stable_diffusion_guidance_rescale_tail_std_2x4x8x8     OK      0.012      0.005     0.44      0.012      0.005
+bench.stable_diffusion_half_channels_last_guidance_rescale_2x4x64x64     OK      0.465      0.071     0.15      0.445      0.068
+bench.stable_diffusion_batched_timestep_table_unique_dim1_2x128x2     OK      0.117      0.020     0.17      0.117      0.019
+bench.stable_diffusion_scheduler_cumextrema_2x4x4x4     OK      0.009      0.008     0.87      0.009      0.008
+bench.stable_diffusion_timestep_bincount_1024     OK      0.003      0.002     0.51      0.003      0.001
+bench.stable_diffusion_scheduler_sigma_stack_1024     OK      0.004      0.001     0.20      0.004      0.001
+bench.stable_diffusion_ddim_scheduler_step_2x4x8x8     OK      0.052      0.022     0.44      0.051      0.022
+bench.stable_diffusion_karras_euler_scheduler_step_2x4x8x8     OK      0.010      0.004     0.41      0.010      0.004
+bench.stable_diffusion_euler_ancestral_scheduler_step_2x4x8x8     OK      0.014      0.005     0.36      0.013      0.005
+bench.stable_diffusion_half_channels_last_dpmpp_2m_scheduler_step_2x4x64x64     OK      0.045      0.034     0.75      0.045      0.033
+bench.stable_diffusion_half_channels_last_dpmpp_sde_scheduler_step_2x4x64x64     OK      0.060      0.042     0.70      0.059      0.042
+bench.stable_diffusion_vae_path_1x3x8x8     OK      0.034      0.017     0.51      0.034      0.015
+bench.stable_diffusion_half_channels_last_vae_posterior_sample_1x8x64x64     OK      0.028      0.020     0.71      0.027      0.020
+bench.stable_diffusion_half_vae_encode_down_block_1x3x16x16     OK      0.130      0.084     0.65      0.129      0.079
+bench.stable_diffusion_half_vae_attention_block_1x16x8x8     OK      0.085      0.044     0.52      0.081      0.043
+bench.stable_diffusion_half_video_conv3d_block_1x4x4x8x8     OK      0.081      0.056     0.69      0.081      0.056
+bench.stable_diffusion_half_channels_last_3d_video_conv3d_block_1x4x4x8x8     OK      0.091      0.065     0.71      0.090      0.064
+bench.stable_diffusion_half_channels_last_3d_skip_cat_conv3d_1x4x4x8x8     OK      0.086      0.040     0.47      0.078      0.040
+bench.stable_diffusion_half_vae_nearest_upsample_1x8x16x16     OK      0.009      0.001     0.11      0.008      0.001
+bench.stable_diffusion_half_vae_decode_1x4x2x2     OK      0.009      0.003     0.33      0.009      0.003
+bench.stable_diffusion_half_vae_decode_1x4x8x8     OK      0.032      0.015     0.49      0.031      0.015
+bench.stable_diffusion_half_channels_last_vae_transpose_decode_1x4x8x8     OK      0.031      0.020     0.64      0.030      0.020
+bench.stable_diffusion_half_vae_nearest_block_1x4x8x8     OK      0.102      0.060     0.58      0.102      0.059
+bench.stable_diffusion_half_channels_last_vae_decode_block_1x16x16x16     OK      0.350      0.250     0.71      0.350      0.244
+bench.stable_diffusion_bicubic_postprocess_1x3x16x16     OK      0.025      0.011     0.42      0.023      0.010
+bench.stable_diffusion_area_preprocess_1x3x16x16     OK      0.005      0.002     0.38      0.005      0.002
+bench.stable_diffusion_constant_pad_crop_1x4x16x16     OK      0.008      0.008     0.93      0.008      0.008
+bench.stable_diffusion_mask_nearest_exact_1x1x32x32     OK      0.003      0.001     0.38      0.003      0.001
+bench.stable_diffusion_inpaint_preprocess_bundle_half_channels_last_1x4x16x16     OK      0.038      0.028     0.75      0.037      0.028
+bench.stable_diffusion_affine_grid_sample_mask_1x4x16x16     OK      0.016      0.009     0.55      0.015      0.008
+bench.stable_diffusion_module_pipeline_1x4x4x4     OK      0.229      0.158     0.69      0.224      0.157
+bench.stable_diffusion_half_module_pipeline_1x4x4x4     OK      0.228      0.146     0.64      0.225      0.146
+bench.stable_diffusion_half_channels_last_module_pipeline_1x4x4x4     OK      0.217      0.090     0.41      0.213      0.088
+bench.stable_diffusion_half_channels_last_inpaint_module_pipeline_1x4x4x4     OK      0.244      0.107     0.44      0.241      0.104
+bench.stable_diffusion_sdxl_half_channels_last_inpaint_controlnet_module_pipeline_1x4x4x4     OK      0.392      0.163     0.42      0.389      0.162
+bench.nn_functional_sdpa_dropout_one_1x2x16x16     OK      0.016      0.001     0.04      0.015      0.001
+bench.einsum_attention_scores_1x2x16x16     OK      0.008      0.002     0.18      0.008      0.002
+bench.einsum_attention_scores_generic_labels_1x2x16x16     OK      0.009      0.002     0.17      0.008      0.001
+bench.nn_functional_sdpa_gqa_1x4x16x16     OK      0.011      0.008     0.68      0.011      0.007
+bench.nn_functional_embedding_32x16        OK      0.001      0.001     0.66      0.001      0.001
+bench.nn_functional_embedding_max_norm_32x16     OK      0.018      0.005     0.25      0.018      0.005
+bench.nn_linear_module_64x64               OK      0.005      0.003     0.55      0.004      0.003
+bench.nn_multihead_attention_1x8x32        OK      0.030      0.022     0.71      0.028      0.021
+bench.nn_multihead_attention_key_padding_mask_1x8x32     OK      0.036      0.023     0.65      0.035      0.023
+bench.nn_multihead_attention_cross_1x8x32     OK      0.030      0.023     0.76      0.028      0.023
+bench.nn_multihead_attention_kv_1x8x32     OK      0.029      0.022     0.76      0.028      0.022
+bench.nn_sequential_linear_relu_64x64      OK      0.008      0.004     0.51      0.008      0.004
+bench.nn_functional_mse_loss_64x64         OK      0.004      0.000     0.11      0.004      0.000
+bench.nn_functional_l1_loss_64x64          OK      0.004      0.002     0.54      0.004      0.002
+bench.nn_functional_nll_loss_64x64         OK      0.001      0.000     0.38      0.001      0.000
+bench.nn_functional_nll_loss_weight_64x64     OK      0.001      0.000     0.48      0.001      0.000
+bench.nn_functional_cross_entropy_64x64     OK      0.004      0.003     0.61      0.004      0.002
+bench.nn_functional_cross_entropy_label_smoothing_64x64     OK      0.010      0.003     0.29      0.009      0.003
+bench.nn_functional_cross_entropy_weight_64x64     OK      0.004      0.003     0.64      0.004      0.003
+bench.nn_functional_cross_entropy_weight_label_smoothing_64x64     OK      0.011      0.003     0.30      0.011      0.003
+bench.nn_functional_bce_64x64              OK      0.016      0.007     0.45      0.016      0.007
+bench.nn_functional_bce_weight_64x64       OK      0.018      0.016     0.88      0.018      0.015
+bench.nn_functional_bce_with_logits_64x64     OK      0.013      0.007     0.60      0.012      0.007
+bench.nn_functional_bce_with_logits_weight_pos_64x64     OK      0.015      0.014     0.90      0.015      0.013
+bench.autograd_grad_square_32x32           OK      0.010      0.003     0.30      0.010      0.003
+bench.optim_sgd_square_step_32x32          OK      0.025      0.004     0.16      0.024      0.004
+bench.transpose_contiguous_96x64           OK      0.003      0.003     0.76      0.003      0.002
+bench.permute_contiguous_24x32x16          OK      0.004      0.003     0.59      0.004      0.003
+bench.cast_float64_64x64                   OK      0.001      0.001     0.96      0.001      0.001
+bench.tensor_new_zeros_64x64               OK      0.001      0.001     0.48      0.001      0.001
+bench.tensor_new_full_64x64                OK      0.001      0.001     0.70      0.001      0.001
+bench.tensor_type_as_64x64                 OK      0.001      0.001     0.77      0.001      0.001
+bench.expand_contiguous_64x64              OK      0.001      0.001     0.61      0.001      0.001
+bench.repeat_vector_64x64                  OK      0.004      0.001     0.21      0.004      0.001
+bench.repeat_interleave_64x64              OK      0.003      0.002     0.80      0.003      0.002
+bench.flip_dim1_64x64                      OK      0.001      0.001     0.55      0.001      0.001
+bench.stable_diffusion_flip_latent_lastdim_2x4x8x8     OK      0.001      0.000     0.42      0.001      0.000
+bench.rot90_64x64                          OK      0.001      0.001     0.43      0.001      0.001
+bench.roll_dim1_64x64                      OK      0.002      0.001     0.49      0.002      0.001
+bench.cat_dim0_64x64                       OK      0.001      0.001     0.93      0.001      0.001
+bench.stack_dim0_64x64                     OK      0.001      0.001     0.83      0.001      0.001
+bench.unflatten_64x64                      OK      0.001      0.000     0.50      0.001      0.000
+bench.is_signed_64x64                      OK      0.000      0.000     0.50      0.000      0.000
+bench.atleast_2d_1024                      OK      0.001      0.000     0.41      0.001      0.000
+bench.hstack_64x64                         OK      0.002      0.001     0.75      0.001      0.001
+bench.vstack_64x64                         OK      0.001      0.001     0.81      0.001      0.001
+bench.dstack_64x64                         OK      0.011      0.003     0.31      0.011      0.003
+bench.column_stack_1024                    OK      0.004      0.001     0.31      0.003      0.001
+bench.meshgrid_1024                        OK      0.002      0.001     0.73      0.002      0.001
+bench.cartesian_prod_32x32                 OK      0.006      0.002     0.37      0.006      0.002
+bench.narrow_contiguous_32x64              OK      0.001      0.001     0.62      0.001      0.001
+bench.select_contiguous_64                 OK      0.001      0.000     0.56      0.001      0.000
+bench.bool_mask_64x64                      OK      0.008      0.001     0.17      0.008      0.001
+bench.where_64x64                          OK      0.002      0.001     0.74      0.002      0.001
+bench.mixed_int_slice_8x32                 OK      0.002      0.000     0.21      0.002      0.000
+bench.nonleading_int_columns_64x8          OK      0.002      0.002     0.89      0.002      0.002
+bench.setitem_nonleading_int_columns_64x8     OK      0.002      0.000     0.21      0.002      0.000
+bench.copy_float32_64x64                   OK      0.001      0.000     0.50      0.001      0.000
+bench.fill_inplace_float32_64x64           OK      0.001      0.000     0.33      0.001      0.000
+bench.masked_fill_inplace_float32_64x64     OK      0.002      0.001     0.70      0.002      0.001
+bench.add_inplace_float32_64x64            OK      0.001      0.000     0.28      0.001      0.000
+bench.add_inplace_operator_float32_64x64     OK      0.001      0.000     0.23      0.001      0.000
+bench.sub_inplace_float32_64x64            OK      0.001      0.000     0.27      0.001      0.000
+bench.mul_inplace_float32_64x64            OK      0.001      0.000     0.24      0.001      0.000
+bench.div_inplace_float32_64x64            OK      0.001      0.000     0.23      0.001      0.000
+bench.zero_inplace_float32_64x64           OK      0.001      0.000     0.50      0.000      0.000
+================= 2272 passed, 3 warnings in 121.60s (0:02:01) =================
