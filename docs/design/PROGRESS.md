@@ -11,7 +11,7 @@
 
 ## Phase 0: Laying the foundation (procedure: 02-phase0-baseline.md)
 
-- [ ] 0-1 Environment check — commit: / date:
+- [x] 0-1 Environment check — commit: (pre-snapshot) / date: 2026-07-09
 - [ ] 0-2 .gitignore and full-tree snapshot commit — commit: / date:
 - [ ] 0-3 Create tools/compare_benchmarks.py — commit: / date:
 - [ ] 0-4 Record baseline (tests / collect-count / benchmark) — commit: / date:
