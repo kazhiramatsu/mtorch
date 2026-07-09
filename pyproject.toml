@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mtorch"
+version = "0.0.0"
+description = "A PyTorch-compatible tensor library clone."
+readme = "README.md"
+license = { file = "LICENSE" }
+authors = [{ name = "Kazutake Hiramatsu", email = "kazutakehiramatsu@gmail.com" }]
+requires-python = ">=3.10"
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "License :: OSI Approved :: BSD License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: C++",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+[project.optional-dependencies]
+compat = [
+  "pytest>=8",
+  "torch",
+]
+dev = [
+  "pytest>=8",
+  "torch",
+  "hypothesis>=6",
+  "expecttest>=0.2",
+]
+
+[tool.pytest.ini_options]
+minversion = "8.0"
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "-ra"
+markers = [
+  "compat: PyTorch compatibility harness tests",
+  "api_surface: public API surface compatibility checks",
+  "numerics: tensor value, dtype, shape, and stride compatibility checks",
+  "mutation: in-place mutation and aliasing compatibility checks",
+  "autograd: gradient compatibility checks",
+  "optim: optimizer compatibility checks",
+  "serialization: save/load compatibility checks",
+  "benchmark: lightweight PyTorch-vs-candidate performance comparisons",
+  "slow: large generated compatibility suites",
+]
