@@ -16,7 +16,7 @@
 - [x] 0-3 Create tools/compare_benchmarks.py — commit: b1cb917 / date: 2026-07-09
 - [x] 0-4 Record baseline (tests / collect-count / benchmark) — commit: 96a2a06 / date: 2026-07-09
 - [x] 0-5 Delete compat/benchmark_*.json — commit: c434957 / date: 2026-07-09
-- [ ] 0-6 Phase completion check — commit: / date:
+- [x] 0-6 Phase completion check — commit: pending / date: 2026-07-09
 
 Notes:
 
