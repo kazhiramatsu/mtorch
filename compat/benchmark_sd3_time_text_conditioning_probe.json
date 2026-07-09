@@ -1,0 +1,18 @@
+{
+  "benchmarks": [
+    {
+      "candidate_median_ms": 0.6862715,
+      "candidate_min_ms": 0.629625,
+      "id": "bench.stable_diffusion_sd3_time_text_conditioning_half_4x2048x1280",
+      "max_ratio": 0.0,
+      "max_ratio_exceeded": false,
+      "ratio": 0.9951675164297191,
+      "reference_median_ms": 0.689604,
+      "reference_min_ms": 0.678417,
+      "repeat": 40,
+      "slow_ratio": 1.0,
+      "slow_ratio_exceeded": false,
+      "status": "OK"
+    }
+  ]
+}

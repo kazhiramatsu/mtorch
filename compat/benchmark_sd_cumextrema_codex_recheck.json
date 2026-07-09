@@ -1,0 +1,18 @@
+{
+  "benchmarks": [
+    {
+      "candidate_median_ms": 0.007083,
+      "candidate_min_ms": 0.006125,
+      "id": "bench.stable_diffusion_scheduler_cumextrema_2x4x4x4",
+      "max_ratio": 0.0,
+      "max_ratio_exceeded": false,
+      "ratio": 0.9713384530992869,
+      "reference_median_ms": 0.007292,
+      "reference_min_ms": 0.006833,
+      "repeat": 50000,
+      "slow_ratio": 1.0,
+      "slow_ratio_exceeded": false,
+      "status": "OK"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "benchmarks": [
+    {
+      "candidate_median_ms": 0.027167,
+      "candidate_min_ms": 0.022083,
+      "id": "bench.stable_diffusion_clip_causal_attention_1x2x77x64",
+      "max_ratio": 0.0,
+      "max_ratio_exceeded": false,
+      "ratio": 0.8811014173126196,
+      "reference_median_ms": 0.030833,
+      "reference_min_ms": 0.025667,
+      "repeat": 20000,
+      "slow_ratio": 1.0,
+      "slow_ratio_exceeded": false,
+      "status": "OK"
+    }
+  ]
+}

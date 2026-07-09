@@ -1,0 +1,88 @@
+{
+  "benchmarks": [
+    {
+      "candidate_median_ms": 122.5297295,
+      "candidate_min_ms": 119.62425,
+      "id": "bench.stable_diffusion_sd3_rectangular_pooled_controlnet_img2img_denoising_loop_half_1x16x16x24_strength060_3step",
+      "max_ratio": 0.0,
+      "max_ratio_exceeded": false,
+      "ratio": 0.6647036690199152,
+      "reference_median_ms": 184.337375,
+      "reference_min_ms": 183.044333,
+      "repeat": 80,
+      "slow_ratio": 1.0,
+      "slow_ratio_exceeded": false,
+      "status": "OK"
+    },
+    {
+      "candidate_median_ms": 134.9732505,
+      "candidate_min_ms": 132.223041,
+      "id": "bench.stable_diffusion_sd3_rectangular_pooled_inpaint_controlnet_img2img_denoising_loop_half_1x16x16x24_strength060_3step",
+      "max_ratio": 0.0,
+      "max_ratio_exceeded": false,
+      "ratio": 0.6976123370119547,
+      "reference_median_ms": 193.4788755,
+      "reference_min_ms": 192.948834,
+      "repeat": 80,
+      "slow_ratio": 1.0,
+      "slow_ratio_exceeded": false,
+      "status": "OK"
+    },
+    {
+      "candidate_median_ms": 148.4753545,
+      "candidate_min_ms": 144.31325,
+      "id": "bench.stable_diffusion_sd3_rectangular_pooled_multi_image_inpaint_controlnet_img2img_denoising_loop_half_1x16x16x24_strength060_3step",
+      "max_ratio": 0.0,
+      "max_ratio_exceeded": false,
+      "ratio": 0.7363564437149994,
+      "reference_median_ms": 201.635167,
+      "reference_min_ms": 201.097333,
+      "repeat": 80,
+      "slow_ratio": 1.0,
+      "slow_ratio_exceeded": false,
+      "status": "OK"
+    },
+    {
+      "candidate_median_ms": 146.1773125,
+      "candidate_min_ms": 143.626666,
+      "id": "bench.stable_diffusion_sd3_rectangular_pooled_multi_image_inpaint_controlnet_windowed_img2img_denoising_loop_half_1x16x16x24_strength060_3step",
+      "max_ratio": 0.0,
+      "max_ratio_exceeded": false,
+      "ratio": 0.7245632393338661,
+      "reference_median_ms": 201.7454165,
+      "reference_min_ms": 201.1315,
+      "repeat": 80,
+      "slow_ratio": 1.0,
+      "slow_ratio_exceeded": false,
+      "status": "OK"
+    },
+    {
+      "candidate_median_ms": 159.0366245,
+      "candidate_min_ms": 157.439834,
+      "id": "bench.stable_diffusion_sd3_rectangular_pooled_triple_image_inpaint_controlnet_img2img_denoising_loop_half_1x16x16x24_strength060_3step",
+      "max_ratio": 0.0,
+      "max_ratio_exceeded": false,
+      "ratio": 0.7593654362505811,
+      "reference_median_ms": 209.4335835,
+      "reference_min_ms": 208.685542,
+      "repeat": 80,
+      "slow_ratio": 1.0,
+      "slow_ratio_exceeded": false,
+      "status": "OK"
+    },
+    {
+      "candidate_median_ms": 158.6073125,
+      "candidate_min_ms": 155.730333,
+      "id": "bench.stable_diffusion_sd3_rectangular_pooled_triple_image_inpaint_controlnet_windowed_img2img_denoising_loop_half_1x16x16x24_strength060_3step",
+      "max_ratio": 0.0,
+      "max_ratio_exceeded": false,
+      "ratio": 0.7570829289021451,
+      "reference_median_ms": 209.497938,
+      "reference_min_ms": 208.815666,
+      "repeat": 80,
+      "slow_ratio": 1.0,
+      "slow_ratio_exceeded": false,
+      "status": "OK"
+    }
+  ]
+}

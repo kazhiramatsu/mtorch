@@ -1,0 +1,18 @@
+{
+  "benchmarks": [
+    {
+      "candidate_median_ms": 0.010875,
+      "candidate_min_ms": 0.010667,
+      "id": "bench.kron_16x16",
+      "max_ratio": 0.0,
+      "max_ratio_exceeded": false,
+      "ratio": 0.5600762218674357,
+      "reference_median_ms": 0.019417,
+      "reference_min_ms": 0.019083,
+      "repeat": 120,
+      "slow_ratio": 1.0,
+      "slow_ratio_exceeded": false,
+      "status": "OK"
+    }
+  ]
+}

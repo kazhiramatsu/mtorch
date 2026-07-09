@@ -1,0 +1,18 @@
+{
+  "benchmarks": [
+    {
+      "candidate_median_ms": 0.056416,
+      "candidate_min_ms": 0.054833,
+      "id": "bench.stable_diffusion_dynamic_thresholding_quantile_2x4x64x64",
+      "max_ratio": 0.0,
+      "max_ratio_exceeded": false,
+      "ratio": 0.19374458038205625,
+      "reference_median_ms": 0.2911875,
+      "reference_min_ms": 0.205125,
+      "repeat": 120,
+      "slow_ratio": 1.0,
+      "slow_ratio_exceeded": false,
+      "status": "OK"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "benchmarks": [
+    {
+      "candidate_median_ms": 0.006166,
+      "candidate_min_ms": 0.006,
+      "id": "bench.quantile_dim1_64x64",
+      "max_ratio": 0.0,
+      "max_ratio_exceeded": false,
+      "ratio": 0.1444450951683748,
+      "reference_median_ms": 0.0426875,
+      "reference_min_ms": 0.038833,
+      "repeat": 120,
+      "slow_ratio": 1.0,
+      "slow_ratio_exceeded": false,
+      "status": "OK"
+    },
+    {
+      "candidate_median_ms": 0.006542,
+      "candidate_min_ms": 0.006375,
+      "id": "bench.quantile_all_64x64",
+      "max_ratio": 0.0,
+      "max_ratio_exceeded": false,
+      "ratio": 0.1719678250354871,
+      "reference_median_ms": 0.038042,
+      "reference_min_ms": 0.017958,
+      "repeat": 120,
+      "slow_ratio": 1.0,
+      "slow_ratio_exceeded": false,
+      "status": "OK"
+    }
+  ]
+}

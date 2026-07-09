@@ -1,0 +1,32 @@
+{
+  "benchmarks": [
+    {
+      "candidate_median_ms": 0.000875,
+      "candidate_min_ms": 0.000666,
+      "id": "bench.cast_float64_64x64",
+      "max_ratio": 0.0,
+      "max_ratio_exceeded": false,
+      "ratio": 0.8071955719557197,
+      "reference_median_ms": 0.001084,
+      "reference_min_ms": 0.00075,
+      "repeat": 50000,
+      "slow_ratio": 1.0,
+      "slow_ratio_exceeded": false,
+      "status": "OK"
+    },
+    {
+      "candidate_median_ms": 0.000917,
+      "candidate_min_ms": 0.000667,
+      "id": "bench.tensor_type_as_64x64",
+      "max_ratio": 0.0,
+      "max_ratio_exceeded": false,
+      "ratio": 0.9169999999999999,
+      "reference_median_ms": 0.001,
+      "reference_min_ms": 0.000791,
+      "repeat": 50000,
+      "slow_ratio": 1.0,
+      "slow_ratio_exceeded": false,
+      "status": "OK"
+    }
+  ]
+}

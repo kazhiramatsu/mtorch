@@ -1,0 +1,18 @@
+{
+  "benchmarks": [
+    {
+      "candidate_median_ms": 0.001125,
+      "candidate_min_ms": 0.001042,
+      "id": "bench.norm_dim1_64x64",
+      "max_ratio": 0.0,
+      "max_ratio_exceeded": false,
+      "ratio": 0.6067961165048543,
+      "reference_median_ms": 0.001854,
+      "reference_min_ms": 0.00175,
+      "repeat": 10,
+      "slow_ratio": 1.0,
+      "slow_ratio_exceeded": false,
+      "status": "OK"
+    }
+  ]
+}

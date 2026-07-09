@@ -1,0 +1,74 @@
+{
+  "benchmarks": [
+    {
+      "candidate_median_ms": 0.00075,
+      "candidate_min_ms": 0.000666,
+      "id": "bench.nn_functional_interpolate_nearest_1x4x16x16",
+      "max_ratio": 0.0,
+      "max_ratio_exceeded": false,
+      "ratio": 0.13636363636363638,
+      "reference_median_ms": 0.0055,
+      "reference_min_ms": 0.005083,
+      "repeat": 3000,
+      "slow_ratio": 1.0,
+      "slow_ratio_exceeded": false,
+      "status": "OK"
+    },
+    {
+      "candidate_median_ms": 0.00075,
+      "candidate_min_ms": 0.000666,
+      "id": "bench.nn_functional_interpolate_nearest_exact_1x4x16x16",
+      "max_ratio": 0.0,
+      "max_ratio_exceeded": false,
+      "ratio": 0.12413108242303873,
+      "reference_median_ms": 0.006042,
+      "reference_min_ms": 0.005625,
+      "repeat": 3000,
+      "slow_ratio": 1.0,
+      "slow_ratio_exceeded": false,
+      "status": "OK"
+    },
+    {
+      "candidate_median_ms": 0.000667,
+      "candidate_min_ms": 0.000625,
+      "id": "bench.nn_functional_interpolate_nearest_half_1x4x16x16",
+      "max_ratio": 0.0,
+      "max_ratio_exceeded": false,
+      "ratio": 0.1096318211702827,
+      "reference_median_ms": 0.006084,
+      "reference_min_ms": 0.005625,
+      "repeat": 3000,
+      "slow_ratio": 1.0,
+      "slow_ratio_exceeded": false,
+      "status": "OK"
+    },
+    {
+      "candidate_median_ms": 0.000958,
+      "candidate_min_ms": 0.000875,
+      "id": "bench.stable_diffusion_half_vae_nearest_upsample_1x8x16x16",
+      "max_ratio": 0.0,
+      "max_ratio_exceeded": false,
+      "ratio": 0.11325215746542144,
+      "reference_median_ms": 0.008459,
+      "reference_min_ms": 0.007875,
+      "repeat": 3000,
+      "slow_ratio": 1.0,
+      "slow_ratio_exceeded": false,
+      "status": "OK"
+    },
+    {
+      "candidate_median_ms": 0.060666,
+      "candidate_min_ms": 0.053667,
+      "id": "bench.stable_diffusion_half_vae_nearest_block_1x4x8x8",
+      "max_ratio": 0.0,
+      "max_ratio_exceeded": false,
+      "ratio": 0.596472253903331,
+      "reference_median_ms": 0.101708,
+      "reference_min_ms": 0.093792,
+      "repeat": 3000,
+      "slow_ratio": 1.0,
+      "slow_ratio_exceeded": false,
+      "status": "OK"
+    }
+  ]
+}

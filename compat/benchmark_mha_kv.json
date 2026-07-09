@@ -1,0 +1,46 @@
+{
+  "benchmarks": [
+    {
+      "candidate_median_ms": 0.023792,
+      "candidate_min_ms": 0.023542,
+      "id": "bench.nn_multihead_attention_1x8x32",
+      "max_ratio": 0.0,
+      "max_ratio_exceeded": false,
+      "ratio": 0.8561044942607319,
+      "reference_median_ms": 0.027791,
+      "reference_min_ms": 0.026792,
+      "repeat": 9,
+      "slow_ratio": 1.0,
+      "slow_ratio_exceeded": false,
+      "status": "OK"
+    },
+    {
+      "candidate_median_ms": 0.029209,
+      "candidate_min_ms": 0.029042,
+      "id": "bench.nn_multihead_attention_key_padding_mask_1x8x32",
+      "max_ratio": 0.0,
+      "max_ratio_exceeded": false,
+      "ratio": 0.8817811320754716,
+      "reference_median_ms": 0.033125,
+      "reference_min_ms": 0.032666,
+      "repeat": 9,
+      "slow_ratio": 1.0,
+      "slow_ratio_exceeded": false,
+      "status": "OK"
+    },
+    {
+      "candidate_median_ms": 0.023833,
+      "candidate_min_ms": 0.023625,
+      "id": "bench.nn_multihead_attention_kv_1x8x32",
+      "max_ratio": 0.0,
+      "max_ratio_exceeded": false,
+      "ratio": 0.8524572573145432,
+      "reference_median_ms": 0.027958,
+      "reference_min_ms": 0.027333,
+      "repeat": 9,
+      "slow_ratio": 1.0,
+      "slow_ratio_exceeded": false,
+      "status": "OK"
+    }
+  ]
+}

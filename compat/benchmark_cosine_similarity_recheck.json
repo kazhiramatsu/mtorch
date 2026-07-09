@@ -1,0 +1,18 @@
+{
+  "benchmarks": [
+    {
+      "candidate_median_ms": 0.005125,
+      "candidate_min_ms": 0.005,
+      "id": "bench.nn_functional_cosine_similarity_64x64",
+      "max_ratio": 0.0,
+      "max_ratio_exceeded": false,
+      "ratio": 0.984062980030722,
+      "reference_median_ms": 0.005208,
+      "reference_min_ms": 0.005083,
+      "repeat": 300,
+      "slow_ratio": 1.0,
+      "slow_ratio_exceeded": false,
+      "status": "OK"
+    }
+  ]
+}

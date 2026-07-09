@@ -1,0 +1,88 @@
+{
+  "benchmarks": [
+    {
+      "candidate_median_ms": 0.000292,
+      "candidate_min_ms": 0.00025,
+      "id": "bench.nn_functional_nll_loss_64x64",
+      "max_ratio": 0.0,
+      "max_ratio_exceeded": false,
+      "ratio": 0.3691529709228824,
+      "reference_median_ms": 0.000791,
+      "reference_min_ms": 0.000708,
+      "repeat": 30,
+      "slow_ratio": 1.0,
+      "slow_ratio_exceeded": false,
+      "status": "OK"
+    },
+    {
+      "candidate_median_ms": 0.0003955,
+      "candidate_min_ms": 0.000375,
+      "id": "bench.nn_functional_nll_loss_weight_64x64",
+      "max_ratio": 0.0,
+      "max_ratio_exceeded": false,
+      "ratio": 0.4993686868686869,
+      "reference_median_ms": 0.000792,
+      "reference_min_ms": 0.00075,
+      "repeat": 30,
+      "slow_ratio": 1.0,
+      "slow_ratio_exceeded": false,
+      "status": "OK"
+    },
+    {
+      "candidate_median_ms": 0.002375,
+      "candidate_min_ms": 0.002291,
+      "id": "bench.nn_functional_cross_entropy_64x64",
+      "max_ratio": 0.0,
+      "max_ratio_exceeded": false,
+      "ratio": 0.6404206552514493,
+      "reference_median_ms": 0.0037085,
+      "reference_min_ms": 0.003666,
+      "repeat": 30,
+      "slow_ratio": 1.0,
+      "slow_ratio_exceeded": false,
+      "status": "OK"
+    },
+    {
+      "candidate_median_ms": 0.002834,
+      "candidate_min_ms": 0.002792,
+      "id": "bench.nn_functional_cross_entropy_label_smoothing_64x64",
+      "max_ratio": 0.0,
+      "max_ratio_exceeded": false,
+      "ratio": 0.3134262331342624,
+      "reference_median_ms": 0.009042,
+      "reference_min_ms": 0.008666,
+      "repeat": 30,
+      "slow_ratio": 1.0,
+      "slow_ratio_exceeded": false,
+      "status": "OK"
+    },
+    {
+      "candidate_median_ms": 0.002584,
+      "candidate_min_ms": 0.002541,
+      "id": "bench.nn_functional_cross_entropy_weight_64x64",
+      "max_ratio": 0.0,
+      "max_ratio_exceeded": false,
+      "ratio": 0.6392874814448294,
+      "reference_median_ms": 0.004042,
+      "reference_min_ms": 0.003917,
+      "repeat": 30,
+      "slow_ratio": 1.0,
+      "slow_ratio_exceeded": false,
+      "status": "OK"
+    },
+    {
+      "candidate_median_ms": 0.003417,
+      "candidate_min_ms": 0.003375,
+      "id": "bench.nn_functional_cross_entropy_weight_label_smoothing_64x64",
+      "max_ratio": 0.0,
+      "max_ratio_exceeded": false,
+      "ratio": 0.3077130892881264,
+      "reference_median_ms": 0.0111045,
+      "reference_min_ms": 0.010417,
+      "repeat": 30,
+      "slow_ratio": 1.0,
+      "slow_ratio_exceeded": false,
+      "status": "OK"
+    }
+  ]
+}

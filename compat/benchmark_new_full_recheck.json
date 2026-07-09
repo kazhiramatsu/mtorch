@@ -1,0 +1,18 @@
+{
+  "benchmarks": [
+    {
+      "candidate_median_ms": 0.000875,
+      "candidate_min_ms": 0.000666,
+      "id": "bench.tensor_new_full_64x64",
+      "max_ratio": 0.0,
+      "max_ratio_exceeded": false,
+      "ratio": 0.875,
+      "reference_median_ms": 0.001,
+      "reference_min_ms": 0.000916,
+      "repeat": 50,
+      "slow_ratio": 1.0,
+      "slow_ratio_exceeded": false,
+      "status": "OK"
+    }
+  ]
+}

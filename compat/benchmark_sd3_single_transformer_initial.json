@@ -1,0 +1,18 @@
+{
+  "benchmarks": [
+    {
+      "candidate_median_ms": 2.966021,
+      "candidate_min_ms": 2.89275,
+      "id": "bench.stable_diffusion_sd3_single_transformer_block_half_2x64x77x320",
+      "max_ratio": 0.0,
+      "max_ratio_exceeded": false,
+      "ratio": 0.24483526917057521,
+      "reference_median_ms": 12.1143535,
+      "reference_min_ms": 11.929166,
+      "repeat": 80,
+      "slow_ratio": 1.0,
+      "slow_ratio_exceeded": false,
+      "status": "OK"
+    }
+  ]
+}

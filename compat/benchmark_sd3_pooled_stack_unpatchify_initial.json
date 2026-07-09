@@ -1,0 +1,46 @@
+{
+  "benchmarks": [
+    {
+      "candidate_median_ms": 0.0653335,
+      "candidate_min_ms": 0.06425,
+      "id": "bench.stable_diffusion_sd3_unpatchify_projection_half_2x64x320",
+      "max_ratio": 0.0,
+      "max_ratio_exceeded": false,
+      "ratio": 0.6847190999460261,
+      "reference_median_ms": 0.0954165,
+      "reference_min_ms": 0.090459,
+      "repeat": 80,
+      "slow_ratio": 1.0,
+      "slow_ratio_exceeded": false,
+      "status": "OK"
+    },
+    {
+      "candidate_median_ms": 0.1953335,
+      "candidate_min_ms": 0.187125,
+      "id": "bench.stable_diffusion_sd3_large_unpatchify_projection_half_2x256x320",
+      "max_ratio": 0.0,
+      "max_ratio_exceeded": false,
+      "ratio": 0.5497195588363591,
+      "reference_median_ms": 0.355333,
+      "reference_min_ms": 0.340417,
+      "repeat": 80,
+      "slow_ratio": 1.0,
+      "slow_ratio_exceeded": false,
+      "status": "OK"
+    },
+    {
+      "candidate_median_ms": 8.786854,
+      "candidate_min_ms": 8.613375,
+      "id": "bench.stable_diffusion_sd3_pooled_transformer_stack_half_2x16x16x16",
+      "max_ratio": 0.0,
+      "max_ratio_exceeded": false,
+      "ratio": 0.3926522536421984,
+      "reference_median_ms": 22.3782085,
+      "reference_min_ms": 22.063458,
+      "repeat": 80,
+      "slow_ratio": 1.0,
+      "slow_ratio_exceeded": false,
+      "status": "OK"
+    }
+  ]
+}

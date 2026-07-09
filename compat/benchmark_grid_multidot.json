@@ -1,0 +1,46 @@
+{
+  "benchmarks": [
+    {
+      "candidate_median_ms": 0.002542,
+      "candidate_min_ms": 0.002125,
+      "id": "bench.linalg_multi_dot_32x32",
+      "max_ratio": 0.0,
+      "max_ratio_exceeded": false,
+      "ratio": 0.8134399999999999,
+      "reference_median_ms": 0.003125,
+      "reference_min_ms": 0.001959,
+      "repeat": 180,
+      "slow_ratio": 1.0,
+      "slow_ratio_exceeded": false,
+      "status": "OK"
+    },
+    {
+      "candidate_median_ms": 0.001208,
+      "candidate_min_ms": 0.001125,
+      "id": "bench.meshgrid_1024",
+      "max_ratio": 0.0,
+      "max_ratio_exceeded": false,
+      "ratio": 0.7250900360144058,
+      "reference_median_ms": 0.001666,
+      "reference_min_ms": 0.001542,
+      "repeat": 180,
+      "slow_ratio": 1.0,
+      "slow_ratio_exceeded": false,
+      "status": "OK"
+    },
+    {
+      "candidate_median_ms": 0.002167,
+      "candidate_min_ms": 0.002125,
+      "id": "bench.cartesian_prod_32x32",
+      "max_ratio": 0.0,
+      "max_ratio_exceeded": false,
+      "ratio": 0.4334,
+      "reference_median_ms": 0.005,
+      "reference_min_ms": 0.004875,
+      "repeat": 180,
+      "slow_ratio": 1.0,
+      "slow_ratio_exceeded": false,
+      "status": "OK"
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "benchmarks": [
+    {
+      "candidate_median_ms": 0.002583,
+      "candidate_min_ms": 0.0025,
+      "id": "bench.softmax_dim1_64x64",
+      "max_ratio": 0.0,
+      "max_ratio_exceeded": false,
+      "ratio": 0.7379999999999999,
+      "reference_median_ms": 0.0035,
+      "reference_min_ms": 0.003458,
+      "repeat": 160,
+      "slow_ratio": 1.0,
+      "slow_ratio_exceeded": false,
+      "status": "OK"
+    },
+    {
+      "candidate_median_ms": 0.003375,
+      "candidate_min_ms": 0.002959,
+      "id": "bench.bmm_8x32x32",
+      "max_ratio": 0.0,
+      "max_ratio_exceeded": false,
+      "ratio": 0.3176470588235294,
+      "reference_median_ms": 0.010625,
+      "reference_min_ms": 0.010167,
+      "repeat": 160,
+      "slow_ratio": 1.0,
+      "slow_ratio_exceeded": false,
+      "status": "OK"
+    },
+    {
+      "candidate_median_ms": 0.004792,
+      "candidate_min_ms": 0.004375,
+      "id": "bench.baddbmm_8x32x32",
+      "max_ratio": 0.0,
+      "max_ratio_exceeded": false,
+      "ratio": 0.40637720488466755,
+      "reference_median_ms": 0.011792,
+      "reference_min_ms": 0.011125,
+      "repeat": 160,
+      "slow_ratio": 1.0,
+      "slow_ratio_exceeded": false,
+      "status": "OK"
+    },
+    {
+      "candidate_median_ms": 0.168854,
+      "candidate_min_ms": 0.166292,
+      "id": "bench.stable_diffusion_half_rank3_cross_attention_16x64x77x40",
+      "max_ratio": 0.0,
+      "max_ratio_exceeded": false,
+      "ratio": 0.6527335105097849,
+      "reference_median_ms": 0.2586875,
+      "reference_min_ms": 0.254292,
+      "repeat": 160,
+      "slow_ratio": 1.0,
+      "slow_ratio_exceeded": false,
+      "status": "OK"
+    },
+    {
+      "candidate_median_ms": 0.215688,
+      "candidate_min_ms": 0.212958,
+      "id": "bench.stable_diffusion_half_legacy_baddbmm_attention_16x64x77x40",
+      "max_ratio": 0.0,
+      "max_ratio_exceeded": false,
+      "ratio": 0.20573142209623077,
+      "reference_median_ms": 1.048396,
+      "reference_min_ms": 0.9965,
+      "repeat": 160,
+      "slow_ratio": 1.0,
+      "slow_ratio_exceeded": false,
+      "status": "OK"
+    },
+    {
+      "candidate_median_ms": 0.412979,
+      "candidate_min_ms": 0.4045,
+      "id": "bench.stable_diffusion_half_upcast_baddbmm_attention_16x64x77x40",
+      "max_ratio": 0.0,
+      "max_ratio_exceeded": false,
+      "ratio": 0.6352101183504307,
+      "reference_median_ms": 0.6501455,
+      "reference_min_ms": 0.624958,
+      "repeat": 160,
+      "slow_ratio": 1.0,
+      "slow_ratio_exceeded": false,
+      "status": "OK"
+    }
+  ]
+}

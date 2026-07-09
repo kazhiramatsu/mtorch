@@ -1,0 +1,60 @@
+{
+  "benchmarks": [
+    {
+      "candidate_median_ms": 0.001125,
+      "candidate_min_ms": 0.001041,
+      "id": "bench.addmv_64x64",
+      "max_ratio": 0.0,
+      "max_ratio_exceeded": false,
+      "ratio": 0.7499999999999999,
+      "reference_median_ms": 0.0015,
+      "reference_min_ms": 0.001,
+      "repeat": 100,
+      "slow_ratio": 1.0,
+      "slow_ratio_exceeded": false,
+      "status": "OK"
+    },
+    {
+      "candidate_median_ms": 0.00075,
+      "candidate_min_ms": 0.000708,
+      "id": "bench.addr_64x64",
+      "max_ratio": 0.0,
+      "max_ratio_exceeded": false,
+      "ratio": 0.7204610951008645,
+      "reference_median_ms": 0.001041,
+      "reference_min_ms": 0.000958,
+      "repeat": 100,
+      "slow_ratio": 1.0,
+      "slow_ratio_exceeded": false,
+      "status": "OK"
+    },
+    {
+      "candidate_median_ms": 0.004833,
+      "candidate_min_ms": 0.00425,
+      "id": "bench.baddbmm_8x32x32",
+      "max_ratio": 0.0,
+      "max_ratio_exceeded": false,
+      "ratio": 0.4083995267872232,
+      "reference_median_ms": 0.011834,
+      "reference_min_ms": 0.00875,
+      "repeat": 100,
+      "slow_ratio": 1.0,
+      "slow_ratio_exceeded": false,
+      "status": "OK"
+    },
+    {
+      "candidate_median_ms": 0.003459,
+      "candidate_min_ms": 0.003167,
+      "id": "bench.addbmm_8x32x32",
+      "max_ratio": 0.0,
+      "max_ratio_exceeded": false,
+      "ratio": 0.4586924811033019,
+      "reference_median_ms": 0.007541,
+      "reference_min_ms": 0.007333,
+      "repeat": 100,
+      "slow_ratio": 1.0,
+      "slow_ratio_exceeded": false,
+      "status": "OK"
+    }
+  ]
+}

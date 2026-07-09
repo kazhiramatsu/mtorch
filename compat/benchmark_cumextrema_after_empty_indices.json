@@ -1,0 +1,46 @@
+{
+  "benchmarks": [
+    {
+      "candidate_median_ms": 0.010792,
+      "candidate_min_ms": 0.006708,
+      "id": "bench.cummax_dim1_128x128",
+      "max_ratio": 0.0,
+      "max_ratio_exceeded": false,
+      "ratio": 1.1826849315068493,
+      "reference_median_ms": 0.009125,
+      "reference_min_ms": 0.008542,
+      "repeat": 20000,
+      "slow_ratio": 1.0,
+      "slow_ratio_exceeded": true,
+      "status": "SLOW"
+    },
+    {
+      "candidate_median_ms": 0.008125,
+      "candidate_min_ms": 0.00675,
+      "id": "bench.cummin_dim1_128x128",
+      "max_ratio": 0.0,
+      "max_ratio_exceeded": false,
+      "ratio": 0.9241355777979983,
+      "reference_median_ms": 0.008792,
+      "reference_min_ms": 0.008,
+      "repeat": 20000,
+      "slow_ratio": 1.0,
+      "slow_ratio_exceeded": false,
+      "status": "OK"
+    },
+    {
+      "candidate_median_ms": 0.007042,
+      "candidate_min_ms": 0.00625,
+      "id": "bench.stable_diffusion_scheduler_cumextrema_2x4x4x4",
+      "max_ratio": 0.0,
+      "max_ratio_exceeded": false,
+      "ratio": 0.9389333333333333,
+      "reference_median_ms": 0.0075,
+      "reference_min_ms": 0.006833,
+      "repeat": 20000,
+      "slow_ratio": 1.0,
+      "slow_ratio_exceeded": false,
+      "status": "OK"
+    }
+  ]
+}

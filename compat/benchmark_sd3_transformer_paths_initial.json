@@ -1,0 +1,46 @@
+{
+  "benchmarks": [
+    {
+      "candidate_median_ms": 2.0797505,
+      "candidate_min_ms": 2.037083,
+      "id": "bench.stable_diffusion_sd3_joint_transformer_block_half_2x64x77x320",
+      "max_ratio": 0.0,
+      "max_ratio_exceeded": false,
+      "ratio": 0.22399739313302078,
+      "reference_median_ms": 9.2847085,
+      "reference_min_ms": 9.054041,
+      "repeat": 80,
+      "slow_ratio": 1.0,
+      "slow_ratio_exceeded": false,
+      "status": "OK"
+    },
+    {
+      "candidate_median_ms": 3.002375,
+      "candidate_min_ms": 2.914958,
+      "id": "bench.stable_diffusion_sd3_single_transformer_block_half_2x64x77x320",
+      "max_ratio": 0.0,
+      "max_ratio_exceeded": false,
+      "ratio": 0.2449793462185731,
+      "reference_median_ms": 12.255625,
+      "reference_min_ms": 12.063333,
+      "repeat": 80,
+      "slow_ratio": 1.0,
+      "slow_ratio_exceeded": false,
+      "status": "OK"
+    },
+    {
+      "candidate_median_ms": 8.0299795,
+      "candidate_min_ms": 7.856583,
+      "id": "bench.stable_diffusion_sd3_mini_transformer_stack_half_2x16x16x16",
+      "max_ratio": 0.0,
+      "max_ratio_exceeded": false,
+      "ratio": 0.36876846014044784,
+      "reference_median_ms": 21.7751255,
+      "reference_min_ms": 21.536042,
+      "repeat": 80,
+      "slow_ratio": 1.0,
+      "slow_ratio_exceeded": false,
+      "status": "OK"
+    }
+  ]
+}

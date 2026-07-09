@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+build/
+dist/
+*.egg-info/
+*.so
+.pytest_cache/
+.codex-runs/
+.codex-stop
+benchmark-results/
+baseline-tests.txt
+.DS_Store

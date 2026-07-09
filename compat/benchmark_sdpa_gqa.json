@@ -1,0 +1,32 @@
+{
+  "benchmarks": [
+    {
+      "candidate_median_ms": 0.006,
+      "candidate_min_ms": 0.005917,
+      "id": "bench.nn_functional_sdpa_1x2x16x16",
+      "max_ratio": 0.0,
+      "max_ratio_exceeded": false,
+      "ratio": 0.6,
+      "reference_median_ms": 0.01,
+      "reference_min_ms": 0.009708,
+      "repeat": 11,
+      "slow_ratio": 1.0,
+      "slow_ratio_exceeded": false,
+      "status": "OK"
+    },
+    {
+      "candidate_median_ms": 0.0115,
+      "candidate_min_ms": 0.011333,
+      "id": "bench.nn_functional_sdpa_gqa_1x4x16x16",
+      "max_ratio": 0.0,
+      "max_ratio_exceeded": false,
+      "ratio": 0.7999999999999999,
+      "reference_median_ms": 0.014375,
+      "reference_min_ms": 0.013792,
+      "repeat": 11,
+      "slow_ratio": 1.0,
+      "slow_ratio_exceeded": false,
+      "status": "OK"
+    }
+  ]
+}

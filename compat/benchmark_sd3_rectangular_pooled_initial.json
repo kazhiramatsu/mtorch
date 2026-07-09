@@ -1,0 +1,32 @@
+{
+  "benchmarks": [
+    {
+      "candidate_median_ms": 40.458687,
+      "candidate_min_ms": 39.707292,
+      "id": "bench.stable_diffusion_sd3_rectangular_pooled_multi_controlnet_transformer_stack_half_2x16x16x24",
+      "max_ratio": 0.0,
+      "max_ratio_exceeded": false,
+      "ratio": 0.6572416519702355,
+      "reference_median_ms": 61.5583125,
+      "reference_min_ms": 61.163167,
+      "repeat": 80,
+      "slow_ratio": 1.0,
+      "slow_ratio_exceeded": false,
+      "status": "OK"
+    },
+    {
+      "candidate_median_ms": 80.9968545,
+      "candidate_min_ms": 79.530666,
+      "id": "bench.stable_diffusion_sd3_rectangular_pooled_controlnet_denoising_loop_half_1x16x16x24_2step",
+      "max_ratio": 0.0,
+      "max_ratio_exceeded": false,
+      "ratio": 0.6539931002501839,
+      "reference_median_ms": 123.849708,
+      "reference_min_ms": 122.99825,
+      "repeat": 80,
+      "slow_ratio": 1.0,
+      "slow_ratio_exceeded": false,
+      "status": "OK"
+    }
+  ]
+}

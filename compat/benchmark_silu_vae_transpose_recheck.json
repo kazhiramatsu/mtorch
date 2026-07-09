@@ -1,0 +1,32 @@
+{
+  "benchmarks": [
+    {
+      "candidate_median_ms": 0.002459,
+      "candidate_min_ms": 0.002208,
+      "id": "bench.nn_functional_silu_64x64",
+      "max_ratio": 0.0,
+      "max_ratio_exceeded": false,
+      "ratio": 0.8941818181818182,
+      "reference_median_ms": 0.00275,
+      "reference_min_ms": 0.0025,
+      "repeat": 30000,
+      "slow_ratio": 1.0,
+      "slow_ratio_exceeded": false,
+      "status": "OK"
+    },
+    {
+      "candidate_median_ms": 0.017542,
+      "candidate_min_ms": 0.016208,
+      "id": "bench.stable_diffusion_half_channels_last_vae_transpose_decode_1x4x8x8",
+      "max_ratio": 0.0,
+      "max_ratio_exceeded": false,
+      "ratio": 0.5735866330968185,
+      "reference_median_ms": 0.030583,
+      "reference_min_ms": 0.028,
+      "repeat": 30000,
+      "slow_ratio": 1.0,
+      "slow_ratio_exceeded": false,
+      "status": "OK"
+    }
+  ]
+}

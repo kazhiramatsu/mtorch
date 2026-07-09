@@ -1,0 +1,18 @@
+{
+  "benchmarks": [
+    {
+      "candidate_median_ms": 0.002542,
+      "candidate_min_ms": 0.002417,
+      "id": "bench.nn_functional_grid_sample_bilinear_1x4x16x16",
+      "max_ratio": 0.0,
+      "max_ratio_exceeded": false,
+      "ratio": 1.1297777777777778,
+      "reference_median_ms": 0.00225,
+      "reference_min_ms": 0.002042,
+      "repeat": 5,
+      "slow_ratio": 1.0,
+      "slow_ratio_exceeded": true,
+      "status": "SLOW"
+    }
+  ]
+}

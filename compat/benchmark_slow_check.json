@@ -1,0 +1,46 @@
+{
+  "benchmarks": [
+    {
+      "candidate_median_ms": 0.003292,
+      "candidate_min_ms": 0.003167,
+      "id": "bench.log_softmax_dim1_64x64",
+      "max_ratio": 0.0,
+      "max_ratio_exceeded": false,
+      "ratio": 1.0129230769230768,
+      "reference_median_ms": 0.00325,
+      "reference_min_ms": 0.003166,
+      "repeat": 15,
+      "slow_ratio": 1.0,
+      "slow_ratio_exceeded": true,
+      "status": "SLOW"
+    },
+    {
+      "candidate_median_ms": 0.001542,
+      "candidate_min_ms": 0.001083,
+      "id": "bench.matmul_48x48",
+      "max_ratio": 0.0,
+      "max_ratio_exceeded": false,
+      "ratio": 0.9022820362785254,
+      "reference_median_ms": 0.001709,
+      "reference_min_ms": 0.001666,
+      "repeat": 15,
+      "slow_ratio": 1.0,
+      "slow_ratio_exceeded": false,
+      "status": "OK"
+    },
+    {
+      "candidate_median_ms": 0.002209,
+      "candidate_min_ms": 0.002166,
+      "id": "bench.transpose_contiguous_96x64",
+      "max_ratio": 0.0,
+      "max_ratio_exceeded": false,
+      "ratio": 0.7363333333333333,
+      "reference_median_ms": 0.003,
+      "reference_min_ms": 0.002792,
+      "repeat": 15,
+      "slow_ratio": 1.0,
+      "slow_ratio_exceeded": false,
+      "status": "OK"
+    }
+  ]
+}

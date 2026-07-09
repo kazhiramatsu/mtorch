@@ -1,0 +1,46 @@
+{
+  "benchmarks": [
+    {
+      "candidate_median_ms": 51.9233125,
+      "candidate_min_ms": 51.07675,
+      "id": "bench.stable_diffusion_sd3_rectangular_pooled_triple_image_inpaint_controlnet_transformer_stack_half_2x16x16x24",
+      "max_ratio": 0.0,
+      "max_ratio_exceeded": false,
+      "ratio": 0.7588051402378121,
+      "reference_median_ms": 68.427729,
+      "reference_min_ms": 67.93375,
+      "repeat": 80,
+      "slow_ratio": 1.0,
+      "slow_ratio_exceeded": false,
+      "status": "OK"
+    },
+    {
+      "candidate_median_ms": 211.6265835,
+      "candidate_min_ms": 207.604917,
+      "id": "bench.stable_diffusion_sd3_rectangular_pooled_triple_image_inpaint_controlnet_denoising_loop_half_1x16x16x24_4step",
+      "max_ratio": 0.0,
+      "max_ratio_exceeded": false,
+      "ratio": 0.7618572057250957,
+      "reference_median_ms": 277.777229,
+      "reference_min_ms": 276.284791,
+      "repeat": 80,
+      "slow_ratio": 1.0,
+      "slow_ratio_exceeded": false,
+      "status": "OK"
+    },
+    {
+      "candidate_median_ms": 209.646667,
+      "candidate_min_ms": 207.454917,
+      "id": "bench.stable_diffusion_sd3_rectangular_pooled_triple_image_inpaint_controlnet_windowed_denoising_loop_half_1x16x16x24_4step",
+      "max_ratio": 0.0,
+      "max_ratio_exceeded": false,
+      "ratio": 0.7489607223284239,
+      "reference_median_ms": 279.916771,
+      "reference_min_ms": 278.35225,
+      "repeat": 80,
+      "slow_ratio": 1.0,
+      "slow_ratio_exceeded": false,
+      "status": "OK"
+    }
+  ]
+}

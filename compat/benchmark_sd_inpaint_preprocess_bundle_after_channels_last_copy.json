@@ -1,0 +1,18 @@
+{
+  "benchmarks": [
+    {
+      "candidate_median_ms": 0.025792,
+      "candidate_min_ms": 0.025375,
+      "id": "bench.stable_diffusion_inpaint_preprocess_bundle_half_channels_last_1x4x16x16",
+      "max_ratio": 0.0,
+      "max_ratio_exceeded": false,
+      "ratio": 0.6939489331934243,
+      "reference_median_ms": 0.037167,
+      "reference_min_ms": 0.034416,
+      "repeat": 80,
+      "slow_ratio": 1.0,
+      "slow_ratio_exceeded": false,
+      "status": "OK"
+    }
+  ]
+}

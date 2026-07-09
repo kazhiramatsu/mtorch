@@ -1,0 +1,60 @@
+{
+  "benchmarks": [
+    {
+      "candidate_median_ms": 7.9819585,
+      "candidate_min_ms": 7.897708,
+      "id": "bench.stable_diffusion_sdxl_text_encoder2_stack_half_2x77x1280",
+      "max_ratio": 0.0,
+      "max_ratio_exceeded": false,
+      "ratio": 0.09301611031208681,
+      "reference_median_ms": 85.8126455,
+      "reference_min_ms": 85.096958,
+      "repeat": 60,
+      "slow_ratio": 1.0,
+      "slow_ratio_exceeded": false,
+      "status": "OK"
+    },
+    {
+      "candidate_median_ms": 0.545604,
+      "candidate_min_ms": 0.540666,
+      "id": "bench.stable_diffusion_sdxl_add_time_conditioning_half_8x2816x1280",
+      "max_ratio": 0.0,
+      "max_ratio_exceeded": false,
+      "ratio": 0.48086703498202704,
+      "reference_median_ms": 1.1346255,
+      "reference_min_ms": 1.077458,
+      "repeat": 60,
+      "slow_ratio": 1.0,
+      "slow_ratio_exceeded": false,
+      "status": "OK"
+    },
+    {
+      "candidate_median_ms": 1.0142285,
+      "candidate_min_ms": 1.004292,
+      "id": "bench.stable_diffusion_sdxl_prompt_conditioning_bundle_half_4x77x2048",
+      "max_ratio": 0.0,
+      "max_ratio_exceeded": false,
+      "ratio": 0.6255036359229558,
+      "reference_median_ms": 1.621459,
+      "reference_min_ms": 1.54825,
+      "repeat": 60,
+      "slow_ratio": 1.0,
+      "slow_ratio_exceeded": false,
+      "status": "OK"
+    },
+    {
+      "candidate_median_ms": 0.044875,
+      "candidate_min_ms": 0.044125,
+      "id": "bench.stable_diffusion_timestep_embedding_mlp_half_2x320x1280",
+      "max_ratio": 0.0,
+      "max_ratio_exceeded": false,
+      "ratio": 0.39573531810946544,
+      "reference_median_ms": 0.1133965,
+      "reference_min_ms": 0.107292,
+      "repeat": 60,
+      "slow_ratio": 1.0,
+      "slow_ratio_exceeded": false,
+      "status": "OK"
+    }
+  ]
+}
